@@ -1,0 +1,35 @@
+:root {
+  --theme-primary: #00DC82;
+
+  --theme-text: #9e9e9e;
+  --theme-background: #111016;
+  --theme-border: #252629;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-primary: #ad72df;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    color: var(--theme-text);
+    background-color: var(--theme-background);
+  }
+
+  header,
+  main,
+  footer {
+    @apply max-w-7xl mx-auto h-16;
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  header {
+    @apply flex justify-between items-center gap-3;
+  }
+}
