@@ -24,12 +24,14 @@
 
   header,
   main,
+  section,
   footer {
-    @apply max-w-7xl mx-auto h-16;
+    @apply max-w-7xl mx-auto;
     @apply px-4 sm:px-6 lg:px-8;
   }
 
-  header {
-    @apply flex justify-between items-center gap-3;
+  header,
+  footer {
+    @apply flex justify-between items-center gap-3 h-16;
   }
 }

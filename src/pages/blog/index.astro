@@ -1,0 +1,21 @@
+---
+import BlogPost from "@/components/BlogPost.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+---
+
+<BaseLayout>
+  <section>
+    {
+      posts.map((post) => (
+        <BlogPost
+          title={post.data.title}
+          description={post.data.description}
+          href={`/blog/${post.slug}`}
+        />
+      ))
+    }
+  </section>
+</BaseLayout>
